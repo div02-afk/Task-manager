@@ -1,0 +1,102 @@
+.outer{
+    background-color: #5390C9;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+.actions{
+    width: 90%;
+
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.addtask{
+    border-radius: 50px;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.fa-solid{
+    margin: auto;
+}
+.input{
+    background-color: #b1b1b1;
+    width: 210px;
+    height: 45px;
+    border-radius: 50px;
+    max-width: 500px;
+    min-width: 200px;
+    margin-right: 2rem;
+}
+
+.lists{
+    margin:auto ;
+    margin-top: 3rem;
+    display: flex;
+
+    width: 80%;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: rgb(0, 0, 0); */
+    /* border:2px black solid; */
+}
+.tasks{
+    margin: auto;
+    margin-left: 1rem;
+}
+
+.list{
+    /* margin-top: 3rem; */
+    display: flex;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-content: center;
+    justify-content: space-between;
+    background-color:#b1b1b1;
+    border-radius: 50px;
+    max-width: 1000px;
+    /* border-bottom: 2px black solid; */
+}
+.list::before{
+    transition-duration: 2s;
+}
+.title{
+    margin-top: 1rem;
+}
+.completetask{
+    border-radius: 100%;
+    height: 45px;
+    width: 45px;
+    /* justify-self: flex-end; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* margin-right: 1rem; */
+}
+#empty{
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+}
+@media screen and (min-width : 600px) {
+    .actions{
+        width:90%;
+        margin-top: 6rem;
+    }
+    .input{
+        width: 40%;
+    }
+}

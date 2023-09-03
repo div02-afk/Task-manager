@@ -22,9 +22,17 @@ class App extends React.Component{
     })
     
   }
+  NTasksRemaining(){
+    return(
+      <div id="empty" className = "text-center">{this.state.count} Pending Tas</div>
+    )
+  }
   
   Save(){
+    
     const div = document.getElementById("lists")
+    if(document.getElementById("empty")) 
+    div.removeChild(document.getElementById("empty"))
     const outerDiv =document.createElement("div")
     const tasks = document.createElement("span")
     const deleteButton = document.createElement("button")
@@ -33,11 +41,16 @@ class App extends React.Component{
     outerDiv.setAttribute("id",this.state.count)
     outerDiv.appendChild(tasks)
     outerDiv.appendChild(deleteButton)
+    tasks.setAttribute("class","tasks")
     deleteButton.setAttribute("class","btn btn-primary completetask")
     tasks.textContent = this.state.input
-    deleteButton.textContent= "Done"
+    deleteButton.innerHTML= '<i class="fa-regular fa-circle-check fa-xl"></i>'
     deleteButton.addEventListener("click",() =>{
       div.removeChild(outerDiv)
+      if(div.childElementCount == 0){
+        div.innerHTML = '<div id="empty" className = "text-center">No Tasks at the moment</div>'
+      }
+      
     })
     // ReactDOM.render(<Tasks/>,document.getElementById("lists"))
     console.log(this.state.input)
@@ -45,13 +58,13 @@ class App extends React.Component{
   render(){
     return(
       <div className='outer'>
-      
+      <div className='title text-center'><h2 className='font-weight-bold'>Task Manager</h2></div>
         <div className='actions'>
-          <input type='text' onChange = {evt =>this.handleChange(evt)} value = {this.state.input}/>
-          <button className = "btn btn-primary addtask" onClick={this.Save} >Add Task</button>
+          <input type='text' className='input form-control' onChange = {evt =>this.handleChange(evt)} value = {this.state.input}/>
+          <button className = "btn btn-primary addtask" disabled = {this.state.input === ""} onClick={this.Save} ><i class="fa-solid fa-circle-plus fa-xl"></i></button>
         </div>
         <div className='lists' id="lists">
-
+          <div id="empty" className = "text-center">No Tasks at the moment</div>
         </div>
       </div>
     )
