@@ -61,7 +61,7 @@ class App extends React.Component{
       <div className='title text-center'><h2 className='font-weight-bold'>Task Manager</h2></div>
         <div className='actions'>
           <input type='text' className='input form-control' onChange = {evt =>this.handleChange(evt)} value = {this.state.input}/>
-          <button className = "btn btn-primary addtask" disabled = {this.state.input === ""} onClick={this.Save} ><i class="fa-solid fa-circle-plus fa-xl"></i></button>
+          <button className = "btn btn-primary addtask" disabled = {this.state.input === ""} onClick={this.Save} ><i className="fa-solid fa-circle-plus fa-xl"></i></button>
         </div>
         <div className='lists' id="lists">
           <div id="empty" className = "text-center">No Tasks at the moment</div>
